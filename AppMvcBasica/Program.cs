@@ -1,8 +1,13 @@
-using AppMvcBasica.Data;
+﻿using AppMvcBasica.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppMvcBasicaContext>(options =>
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AppMvcBasicaContext")));
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
