@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace AppMvcBasica.Data.Migrations
+namespace AppMvcBasica.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -44,7 +44,6 @@ namespace AppMvcBasica.Data.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Complemento")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Estado")
@@ -81,8 +80,8 @@ namespace AppMvcBasica.Data.Migrations
 
                     b.Property<string>("Documento")
                         .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
+                        .HasMaxLength(14)
+                        .HasColumnType("nvarchar(14)");
 
                     b.Property<bool>("IsAtivo")
                         .HasColumnType("bit");
@@ -417,8 +416,7 @@ namespace AppMvcBasica.Data.Migrations
 
             modelBuilder.Entity("AppMvcBasica.Models.Fornecedor", b =>
                 {
-                    b.Navigation("Endereco")
-                        .IsRequired();
+                    b.Navigation("Endereco");
 
                     b.Navigation("Produtos");
                 });

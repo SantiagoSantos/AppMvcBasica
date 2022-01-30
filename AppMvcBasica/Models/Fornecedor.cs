@@ -14,13 +14,13 @@ namespace AppMvcBasica.Models
 
         public TipoFornecedor TipoFornecedor { get; set; }
 
-        public Endereco Endereco { get; set; }
+        public Endereco? Endereco { get; set; }
 
         [Display(Name = "Ativo")]
         public bool IsAtivo { get; set; }
 
         /* EF Relation  */
-        public IEnumerable<Produto> Produtos { get; set; }
+        public IEnumerable<Produto>? Produtos { get; set; }
     }
 }
 

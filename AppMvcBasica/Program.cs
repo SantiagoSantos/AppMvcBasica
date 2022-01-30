@@ -5,9 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AppMvcBasicaContext>(options =>
-
-    options.UseSqlServer(builder.Configuration.GetConnectionString("AppMvcBasicaContext")));
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("AppMvcBasicaContext"))
+//    );
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");

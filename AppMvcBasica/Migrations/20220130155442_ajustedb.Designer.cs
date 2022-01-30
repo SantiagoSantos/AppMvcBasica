@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace AppMvcBasica.Data.Migrations
+namespace AppMvcBasica.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220117205746_TabelasSistema")]
-    partial class TabelasSistema
+    [Migration("20220130155442_ajustedb")]
+    partial class ajustedb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,7 +46,6 @@ namespace AppMvcBasica.Data.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Complemento")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Estado")
@@ -83,8 +82,8 @@ namespace AppMvcBasica.Data.Migrations
 
                     b.Property<string>("Documento")
                         .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
+                        .HasMaxLength(14)
+                        .HasColumnType("nvarchar(14)");
 
                     b.Property<bool>("IsAtivo")
                         .HasColumnType("bit");
